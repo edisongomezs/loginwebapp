@@ -17,7 +17,7 @@ services:
   web:
     build: .
     depends_on:
-      - db
+      - mysql
     ports:
       - "8080:8080"
     networks:
