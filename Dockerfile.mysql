@@ -1,7 +1,8 @@
 FROM mysql:5.7
 
-# Copiar el archivo my.cnf modificado al contenedor
-COPY my.cnf /etc/mysql/my.cnf
+ENV MYSQL_ROOT_PASSWORD Qwerty@12345
+ENV MYSQL_DATABASE sample
 
-# Exponer el puerto 3306 para conexiones externas
+COPY init.sql /docker-entrypoint-initdb.d/
+
 EXPOSE 3306

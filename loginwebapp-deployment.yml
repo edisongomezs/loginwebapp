@@ -1,9 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: loginwebapp-deployment
-  labels:
-     app: loginwebapp
+  name: loginwebapp
 spec:
   replicas: 2
   selector:
@@ -19,8 +17,12 @@ spec:
         image: edisongomezs/loginwebapp:latest
         ports:
         - containerPort: 8080
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxSurge: 1
-      maxUnavailable: 1
+        env:
+        - name: DATABASE_HOST
+          value: "mysql"
+        - name: DATABASE_USER
+          value: "root"
+        - name: DATABASE_PASSWORD
+          value: "Qwerty@12345"
+        - name: DATABASE_NAME
+          value: "sample"

@@ -3,19 +3,69 @@
   become: yes
 
   tasks:
-    - name: Copy Deployment file from Jenkins to Ansible server
+    - name: Copy MySQL Deployment file from Jenkins to Ansible server
+      fetch:
+        src: /var/lib/jenkins/workspace/LoginWebApp_CI_Job/mysql-deployment.yml
+        dest: /opt/Docker/mysql-deployment.yml
+        flat: yes
+      delegate_to: jenkins-server
+
+    - name: Copy MySQL Service file from Jenkins to Ansible server
+      fetch:
+        src: /var/lib/jenkins/workspace/LoginWebApp_CI_Job/mysql-service.yml
+        dest: /opt/Docker/mysql-service.yml
+        flat: yes
+      delegate_to: jenkins-server
+
+    - name: Copy MySQL Persistent Volume file from Jenkins to Ansible server
+      fetch:
+        src: /var/lib/jenkins/workspace/LoginWebApp_CI_Job/mysql-pv.yml
+        dest: /opt/Docker/mysql-pv.yml
+        flat: yes
+      delegate_to: jenkins-server
+
+    - name: Copy MySQL Persistent Volume Claim file from Jenkins to Ansible server
+      fetch:
+        src: /var/lib/jenkins/workspace/LoginWebApp_CI_Job/mysql-pv-claim.yml
+        dest: /opt/Docker/mysql-pv-claim.yml
+        flat: yes
+      delegate_to: jenkins-server
+
+    - name: Copy MySQL InitDB ConfigMap file from Jenkins to Ansible server
+      fetch:
+        src: /var/lib/jenkins/workspace/LoginWebApp_CI_Job/mysql-initdb-config.yml
+        dest: /opt/Docker/mysql-initdb-config.yml
+        flat: yes
+      delegate_to: jenkins-server
+
+    - name: Copy loginwebapp Deployment file from Jenkins to Ansible server
       fetch:
         src: /var/lib/jenkins/workspace/LoginWebApp_CI_Job/loginwebapp-deployment.yml
         dest: /opt/Docker/loginwebapp-deployment.yml
         flat: yes
       delegate_to: jenkins-server
 
-    - name: Copy Service file from Jenkins to Ansible server
+    - name: Copy loginwebapp Service file from Jenkins to Ansible server
       fetch:
         src: /var/lib/jenkins/workspace/LoginWebApp_CI_Job/loginwebapp-service.yml
         dest: /opt/Docker/loginwebapp-service.yml
         flat: yes
       delegate_to: jenkins-server
+
+    - name: Apply MySQL InitDB ConfigMap
+      command: kubectl apply -f /opt/Docker/mysql-initdb-config.yml
+
+    - name: Apply MySQL Persistent Volume
+      command: kubectl apply -f /opt/Docker/mysql-pv.yml
+
+    - name: Apply MySQL Persistent Volume Claim
+      command: kubectl apply -f /opt/Docker/mysql-pv-claim.yml
+
+    - name: Deploy MySQL on Kubernetes
+      command: kubectl apply -f /opt/Docker/mysql-deployment.yml
+
+    - name: Create service for MySQL
+      command: kubectl apply -f /opt/Docker/mysql-service.yml
 
     - name: Deploy loginwebapp on Kubernetes
       command: kubectl apply -f /opt/Docker/loginwebapp-deployment.yml
