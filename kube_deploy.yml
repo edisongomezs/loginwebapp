@@ -3,26 +3,38 @@
   become: yes
 
   tasks:
-    - name: Apply MySQL InitDB ConfigMap
-      command: kubectl apply -f /opt/Docker/mysql-initdb-config.yml
+    - name: Verificar si el archivo mysql-initdb-config.yml existe en Ansible
+      stat:
+        path: /opt/Docker/mysql-initdb-config.yml
+      register: mysql_initdb_config
 
-    - name: Apply MySQL Persistent Volume
+    - name: Copiar archivos a Kubernetes
+      copy:
+        src: /opt/Docker/
+        dest: /opt/Docker/
+      when: mysql_initdb_config.stat.exists
+
+    - name: Aplicar MySQL InitDB ConfigMap
+      command: kubectl apply -f /opt/Docker/mysql-initdb-config.yml
+      when: mysql_initdb_config.stat.exists
+
+    - name: Aplicar MySQL Persistent Volume
       command: kubectl apply -f /opt/Docker/mysql-pv.yml
 
-    - name: Apply MySQL Persistent Volume Claim
+    - name: Aplicar MySQL Persistent Volume Claim
       command: kubectl apply -f /opt/Docker/mysql-pv-claim.yml
 
-    - name: Deploy MySQL on Kubernetes
+    - name: Desplegar MySQL en Kubernetes
       command: kubectl apply -f /opt/Docker/mysql-deployment.yml
 
-    - name: Create service for MySQL
+    - name: Crear servicio para MySQL
       command: kubectl apply -f /opt/Docker/mysql-service.yml
 
-    - name: Deploy loginwebapp on Kubernetes
+    - name: Desplegar loginwebapp en Kubernetes
       command: kubectl apply -f /opt/Docker/loginwebapp-deployment.yml
 
-    - name: Create service for loginwebapp
+    - name: Crear servicio para loginwebapp
       command: kubectl apply -f /opt/Docker/loginwebapp-service.yml
 
-    - name: Update deployment with new pods if image updated in Docker Hub
+    - name: Actualizar el despliegue con nuevos pods si la imagen se actualizó en Docker Hub
       command: kubectl rollout restart deployment.apps/loginwebapp
