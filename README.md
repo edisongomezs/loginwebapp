@@ -1,55 +1,68 @@
-# LoginWebApp Project
+# LoginWebApp Deployment
 
-## Descripción
-
-Este proyecto es una aplicación web de inicio de sesión desarrollada en Java utilizando JSP y servlets. La aplicación se conecta a una base de datos MySQL para gestionar el registro y la autenticación de usuarios.
-
-## Estructura del Proyecto
-
-- **src/**: Contiene el código fuente de la aplicación.
-- **sql/**: Contiene el archivo SQL `init.sql` que se utiliza para inicializar la base de datos.
-- **Dockerfile**: Utilizado para construir la imagen Docker de la aplicación.
-- **docker-compose.yml**: Archivo de configuración para Docker Compose que define los servicios de la aplicación y la base de datos.
-- **README.md**: Este archivo, que proporciona una descripción general del proyecto.
+Este proyecto describe cómo desplegar y gestionar la aplicación LoginWebApp utilizando Docker, Ansible, Kubernetes y Jenkins. El despliegue se realiza de forma automática a través de un pipeline de CI/CD.
 
 ## Requisitos
 
 - Docker
 - Docker Compose
+- Ansible
+- Kubernetes (EKS)
+- Jenkins
 
-## Configuración
+## Estructura del Proyecto
 
-Asegúrate de tener Docker y Docker Compose instalados en tu máquina.
+- `Dockerfile`: Define la construcción de la imagen Docker para la aplicación LoginWebApp.
+- `docker-compose.yml`: Define los servicios Docker necesarios para el despliegue local.
+- `mysql-deployment.yml`: Despliegue de MySQL en Kubernetes.
+- `mysql-service.yml`: Servicio de MySQL en Kubernetes.
+- `loginwebapp-deployment.yml`: Despliegue de LoginWebApp en Kubernetes.
+- `loginwebapp-service.yml`: Servicio de LoginWebApp en Kubernetes.
+- `create_image_loginwebapp.yml`: Playbook de Ansible para construir y desplegar la imagen Docker de LoginWebApp.
+- `kube_deploy.yml`: Playbook de Ansible para desplegar y gestionar servicios en Kubernetes.
 
-## Despliegue
+## Descripción de los Servidores
 
-Para desplegar la aplicación, sigue estos pasos:
+### 1. Servidor Jenkins
+- **Función**: Orquestador del pipeline CI/CD.
+- **Uso**: Ejecuta trabajos de construcción, prueba y despliegue de la aplicación. Copia los archivos necesarios al servidor Ansible y desencadena el despliegue en Kubernetes.
 
-1. Clona el repositorio en tu máquina local:
-    ```sh
-    git clone https://github.com/edisongomezs/loginwebapp.git
-    cd loginwebapp
-    ```
+### 2. Servidor Ansible
+- **Función**: Motor de automatización.
+- **Uso**: Gestiona la infraestructura y el despliegue de aplicaciones. Utiliza playbooks para automatizar la configuración de los servicios y el despliegue de la aplicación en el clúster de Kubernetes.
 
-2. Construye y levanta los contenedores utilizando Docker Compose:
-    ```sh
-    docker-compose up --build -d
-    ```
+### 3. Clúster de Kubernetes (EKS)
+- **Función**: Plataforma de orquestación de contenedores.
+- **Uso**: Aloja y gestiona los contenedores de la aplicación y la base de datos MySQL. Proporciona escalabilidad y alta disponibilidad para los servicios desplegados.
 
-## Uso
+## Despliegue Automático con CI/CD
 
-Accede a la aplicación web en tu navegador en la siguiente URL: http://localhost:8080/
+### Proceso de Despliegue
 
+1. **Construcción y Prueba en Jenkins**:
+   - Jenkins ejecuta un trabajo que construye la imagen Docker de la aplicación LoginWebApp.
+   - La imagen se empuja a un repositorio Docker.
 
-## Problemas Conocidos
+2. **Automatización con Ansible**:
+   - Jenkins copia los archivos de despliegue (`loginwebapp-deployment.yml`, `loginwebapp-service.yml`, `mysql-deployment.yml`, `mysql-service.yml`) al servidor Ansible.
+   - Ansible aplica los archivos de configuración en Kubernetes, asegurando que los despliegues y servicios estén actualizados.
 
-- Asegúrate de que la base de datos MySQL está corriendo y accesible desde la aplicación web.
-- Verifica la conectividad entre los contenedores si encuentras problemas de conexión.
+3. **Despliegue en Kubernetes**:
+   - Ansible crea los despliegues y servicios necesarios en el clúster de Kubernetes.
+   - Se configuran volúmenes persistentes y servicios para asegurar la correcta operación de la base de datos MySQL y la aplicación.
 
-## Contacto
+### Archivos de Configuración
 
-Para cualquier consulta o problema, puedes contactar al desarrollador del proyecto.
+#### `create_image_loginwebapp.yml`
+Automatiza la creación y despliegue de la imagen Docker para LoginWebApp.
 
----
+#### `kube_deploy.yml`
+Gestiona el despliegue de LoginWebApp y MySQL en Kubernetes, incluyendo la actualización de despliegues si las imágenes Docker se actualizan.
 
+### Notas
 
+- **Despliegue Local**: Para pruebas locales, se puede utilizar `docker-compose.yml`.
+- **Revisión de Logs**: Es importante revisar los logs de los pods y servicios en Kubernetes para asegurarse de que todo funcione correctamente.
+- **Actualización de Configuraciones**: Mantener los archivos de configuración actualizados para reflejar cualquier cambio en la infraestructura o la aplicación.
+
+Con estos pasos y configuraciones, se asegura un flujo de trabajo automatizado y robusto para el despliegue de la aplicación LoginWebApp en un entorno Kubernetes utilizando CI/CD con Jenkins y Ansible.
