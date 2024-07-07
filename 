@@ -1,0 +1,611 @@
+[33mcommit 752d3fb307ee608939479b3bc0e67f03ff94ca56[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: egomezs <edisonjaviergomezs@gmail.com>
+Date:   Tue Jul 2 23:20:48 2024 -0500
+
+    modificar archivo kube_deploy.yml para copias de archivos a Kubernetes
+
+[33mcommit 9ff6c3cdeb149278f799b3a2e4b17a8373d0ceb1[m
+Author: egomezs <edisonjaviergomezs@gmail.com>
+Date:   Tue Jul 2 23:07:34 2024 -0500
+
+    agrega mysql-pv-caim.yml
+
+[33mcommit b5d1ccc974e867856c4306a2a45328a506deaa9f[m
+Author: egomezs <edisonjaviergomezs@gmail.com>
+Date:   Tue Jul 2 22:54:55 2024 -0500
+
+    agrega mysql-pv-caim.yml
+
+[33mcommit e23daa32fa4e5b9c669c2d5f007a86da015f5746[m
+Author: egomezs <edisonjaviergomezs@gmail.com>
+Date:   Tue Jul 2 22:48:05 2024 -0500
+
+    agrega mysql-pv.yml y modifica README.md
+
+[33mcommit 0bfb538755718a57846c9b6e2f5cbf4af8077e94[m
+Author: egomezs <edisonjaviergomezs@gmail.com>
+Date:   Tue Jul 2 22:39:17 2024 -0500
+
+    eliminar archivo my.cnf
+
+[33mcommit c00d8029eea8429339f9c2d5d32ea700686f088e[m
+Author: egomezs <edisonjaviergomezs@gmail.com>
+Date:   Tue Jul 2 22:17:23 2024 -0500
+
+    update to fix problem app to bdd
+
+[33mcommit deba0ca88f9f75d5aa736d1bdadbe854863c206d[m
+Author: egomezs <edisonjaviergomezs@gmail.com>
+Date:   Mon Jul 1 22:41:57 2024 -0500
+
+    docker compose database name db a mysql
+
+[33mcommit 0ac67606d05711eae02b7aaefe3be4532f949b8f[m
+Author: egomezs <edisonjaviergomezs@gmail.com>
+Date:   Mon Jul 1 22:32:50 2024 -0500
+
+    docker compose database name db a mysql
+
+[33mcommit a9c96b8a3195c3426d4181f341c68c30e4937345[m
+Author: egomezs <edisonjaviergomezs@gmail.com>
+Date:   Tue Jun 25 22:56:06 2024 -0500
+
+    nuevas config para comunicar nodos
+
+[33mcommit 5879852a844ca85246abdcdeed51dd2d079093fc[m
+Author: egomezs <edisonjaviergomezs@gmail.com>
+Date:   Tue Jun 25 21:46:42 2024 -0500
+
+    docker-compose y kube
+
+[33mcommit 04796059fbd455ebdeb45919a062219161681f2c[m
+Author: egomezs <edisonjaviergomezs@gmail.com>
+Date:   Tue Jun 25 21:41:14 2024 -0500
+
+    docker-compose y kube
+
+[33mcommit ad71c667ea93d082fb77997db325eeab637787e1[m
+Author: egomezs <edisonjaviergomezs@gmail.com>
+Date:   Tue Jun 25 21:27:56 2024 -0500
+
+    docker-compose my-network y README.md
+
+[33mcommit be0dd8f701a851ba904f857cad7fd2b0deb761bd[m
+Author: egomezs <edisonjaviergomezs@gmail.com>
+Date:   Tue Jun 25 20:54:17 2024 -0500
+
+    correccion docker-compose
+
+[33mcommit 2f8654505bf6eb5d4c8978a510baf68ec44c3c3b[m
+Author: egomezs <edisonjaviergomezs@gmail.com>
+Date:   Tue Jun 25 20:31:44 2024 -0500
+
+    correccion BDD init.sql
+
+[33mcommit 3907e74eb492714e6eec612097e28055276c4d98[m
+Author: egomezs <edisonjaviergomezs@gmail.com>
+Date:   Tue Jun 25 17:51:01 2024 -0500
+
+    correccion BDD init.sql
+
+[33mcommit c898a26abb35b449fdefc7deb0afd3a684cfbfd3[m
+Author: egomezs <edisonjaviergomezs@gmail.com>
+Date:   Tue Jun 25 17:33:24 2024 -0500
+
+    correccion BDD init.sql
+
+[33mcommit 3970f00aaf6dbd5e968d4de698496d7f33ec945b[m
+Author: egomezs <edisonjaviergomezs@gmail.com>
+Date:   Tue Jun 25 17:18:27 2024 -0500
+
+    correccion BDD /var/lib/mysql
+
+[33mcommit 3c5cc215e546970cbabb85a812d70bc91ac4f4f8[m
+Author: egomezs <edisonjaviergomezs@gmail.com>
+Date:   Tue Jun 25 17:08:43 2024 -0500
+
+    correccion BDD
+
+[33mcommit 7866000017421786d324c6743d8d8eb37b982fc8[m
+Author: egomezs <edisonjaviergomezs@gmail.com>
+Date:   Tue Jun 25 16:51:06 2024 -0500
+
+    correccion BDD
+
+[33mcommit 0ea3c60bfd664c89f9c18129f54b0d8afe11500e[m
+Author: egomezs <edisonjaviergomezs@gmail.com>
+Date:   Tue Jun 25 16:34:11 2024 -0500
+
+    merge manual automatica
+
+[33mcommit 3d7080fe6478f038d0bf55b9b3c88392cb4337de[m
+Author: egomezs <edisonjaviergomezs@gmail.com>
+Date:   Tue Jun 25 16:01:23 2024 -0500
+
+    merge manual automatica
+
+[33mcommit f5a4901ee2996116637092d3edba4e51b5f26df1[m
+Author: egomezs <edisonjaviergomezs@gmail.com>
+Date:   Tue Jun 25 10:20:20 2024 -0500
+
+    Correccion Docker file limpar ruta antes de copy
+
+[33mcommit 60255ea1cc76be9dbeabf9ba38c73b88e4f936c6[m
+Author: egomezs <edisonjaviergomezs@gmail.com>
+Date:   Tue Jun 25 10:16:24 2024 -0500
+
+    Correccion Docker file limpar ruta antes de copy
+
+[33mcommit 92037e0ec6c7ed9a642c3ab1111dcbc7cdf51959[m
+Author: egomezs <edisonjaviergomezs@gmail.com>
+Date:   Tue Jun 25 09:56:38 2024 -0500
+
+    Correccion Docker file limpar ruta antes de copy
+
+[33mcommit f6b9369b40e46c85a14cfebf3871e8118d7504ec[m
+Author: egomezs <edisonjaviergomezs@gmail.com>
+Date:   Tue Jun 25 09:32:47 2024 -0500
+
+    Actualizar ruta /opt/Docker/webapp_content/LoginWebApp.war
+
+[33mcommit eaf44332731e3c147f536231606d7e56c03e5b87[m
+Author: egomezs <edisonjaviergomezs@gmail.com>
+Date:   Tue Jun 25 09:19:21 2024 -0500
+
+    Actualizar ruta /opt/Docker/webapp_content/LoginWebApp.war
+
+[33mcommit a858bb1be2a073b00e55b34fd89c29dead2cbd0e[m
+Author: egomezs <edisonjaviergomezs@gmail.com>
+Date:   Tue Jun 25 09:05:29 2024 -0500
+
+    Actualizar ruta LoginWebApp_CI_Job en Jenkins
+
+[33mcommit e2ae406ecb94f04248159c2ed08d3fd693c299d7[m
+Author: egomezs <edisonjaviergomezs@gmail.com>
+Date:   Tue Jun 25 08:57:45 2024 -0500
+
+    Eliminar paso archivos duplicados
+
+[33mcommit f179ea86c073f723375c068b2789499b89ed07db[m
+Author: egomezs <edisonjaviergomezs@gmail.com>
+Date:   Mon Jun 24 22:37:15 2024 -0500
+
+    Ruta LoginWebApp_CI_Job
+
+[33mcommit 1058dd5cafa908f7878276a9fae7af6ea538aa0a[m
+Author: egomezs <edisonjaviergomezs@gmail.com>
+Date:   Mon Jun 24 22:08:08 2024 -0500
+
+    Copy Server to local
+
+[33mcommit 4e0e7a578cef4431128cb6ffb688a13fb10923cd[m
+Author: egomezs <edisonjaviergomezs@gmail.com>
+Date:   Mon Jun 24 21:43:35 2024 -0500
+
+    Copy Server to local
+
+[33mcommit 1a5ee9e5b66a381b316e189b7a6034579f525da6[m
+Author: egomezs <edisonjaviergomezs@gmail.com>
+Date:   Mon Jun 24 21:31:16 2024 -0500
+
+    Añadir archivos de configuración y despliegue para loginwebapp
+
+[33mcommit 98eed31c90431e91ccfee9f03042ab63d7b825ab[m
+Author: egomezs <edisonjaviergomezs@gmail.com>
+Date:   Mon Jun 24 17:10:53 2024 -0500
+
+    Añadir archivos de configuración y despliegue para loginwebapp
+
+[33mcommit 057df4f64a0ef33522a03210f0fd431c55858e34[m
+Author: egomezs <edisonjaviergomezs@gmail.com>
+Date:   Mon Jun 24 16:13:57 2024 -0500
+
+    Añadir archivos de configuración y despliegue para loginwebapp
+
+[33mcommit cca2c6bcb9b61a2f3d8ba87d67348bab5eaec715[m
+Author: egomezs <edisonjaviergomezs@gmail.com>
+Date:   Sun Jun 23 21:14:15 2024 -0500
+
+    first commit
+
+[33mcommit feb79e110745cb6cd289b329a1fd7156e7d05e6e[m
+Author: egomezs <edisonjaviergomezs@gmail.com>
+Date:   Sun Jun 23 21:07:55 2024 -0500
+
+    Initail Commit
+
+[33mcommit f2d0cbe21c71150c8b2936b90ba4c93ccce49bc7[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: root <root@docker.test.local>
+Date:   Fri Aug 17 09:58:39 2018 +0000
+
+    change mysql endpoint
+
+[33mcommit d9cde307b7185bdc082d9ae80de7ac1282b113f1[m
+Author: Santosh P katageri <20514511+santoshkatageri@users.noreply.github.com>
+Date:   Sat Jul 14 14:43:01 2018 +0530
+
+    Set theme jekyll-theme-cayman
+
+[33mcommit 8c1f9102db0cfc46c25635a4d1e6d5a70bda56b8[m
+Author: Santosh P katageri <20514511+santoshkatageri@users.noreply.github.com>
+Date:   Sat Jul 7 10:36:22 2018 +0530
+
+    Update register.jsp
+
+[33mcommit a9effc4991dab78c36d7597178796e52037feb69[m
+Author: Santosh P katageri <20514511+santoshkatageri@users.noreply.github.com>
+Date:   Sat Jul 7 10:33:04 2018 +0530
+
+    Update index.jsp
+
+[33mcommit 1fd27fda09eaf51b51bde4247491c202f7552b11[m
+Author: Santosh P katageri <20514511+santoshkatageri@users.noreply.github.com>
+Date:   Sat Jul 7 10:27:28 2018 +0530
+
+    Update README.md
+
+[33mcommit 08b28b3522861f8f808841418773a7e50c1f8097[m
+Author: Santosh P katageri <20514511+santoshkatageri@users.noreply.github.com>
+Date:   Sat Jul 7 10:22:27 2018 +0530
+
+    Create README.md
+
+[33mcommit 756a69b82f0a936efc9595bf449847c7b2e72e0e[m
+Author: Santosh P katageri <santoshpkatageri@users.noreply.github.com>
+Date:   Tue Jun 19 18:35:46 2018 +0530
+
+    Delete M1038314_032018.pdf
+
+[33mcommit 0a963b818db81074a8ac56d1a24e737a25218a4a[m
+Author: Santosh P katageri <santoshpkatageri@users.noreply.github.com>
+Date:   Tue Jun 19 18:35:36 2018 +0530
+
+    Delete M1038314_042018.pdf
+
+[33mcommit fa861d14f9d34592ff90dd99ee0a03ede198d3d9[m
+Author: Santosh P katageri <santoshpkatageri@users.noreply.github.com>
+Date:   Tue Jun 19 18:34:17 2018 +0530
+
+    Add files via upload
+
+[33mcommit d26158a06edf8294dc22463525b3cbde9e50bbf5[m
+Author: Santosh P katageri <santoshpkatageri@users.noreply.github.com>
+Date:   Mon Jun 18 18:24:15 2018 +0530
+
+    Delete M1038314_122017.pdf
+
+[33mcommit cd6ca2dde75c0d6205bb57d1a7538e3ea659b4ea[m
+Author: Santosh P katageri <santoshpkatageri@users.noreply.github.com>
+Date:   Mon Jun 18 18:23:51 2018 +0530
+
+    Delete M1038314_012018.pdf
+
+[33mcommit 89dd0e902bc348b5c80776689e1ded01e4232d46[m
+Author: Santosh P katageri <santoshpkatageri@users.noreply.github.com>
+Date:   Mon Jun 18 18:19:51 2018 +0530
+
+    Add files via upload
+
+[33mcommit faba66d61ab0c5c8a81fce5daf3a66e9147ef62b[m
+Author: santosh katageri <iamsantoshpkatageri@gmail.com>
+Date:   Wed Jun 6 04:39:45 2018 +0000
+
+    adding dockerfile and kubernetes deplyment file
+
+[33mcommit d7217e3fc83763df4307afaefe36856157883ae3[m
+Author: Santosh P katageri <santoshpkatageri@users.noreply.github.com>
+Date:   Tue Jun 5 15:21:09 2018 +0530
+
+    Update login.jsp
+
+[33mcommit 2ec3de9cf167f4b6f2564063de9ae294aa4c6d1b[m
+Author: Santosh P katageri <santoshpkatageri@users.noreply.github.com>
+Date:   Tue Jun 5 15:20:45 2018 +0530
+
+    Update userRegistration.jsp
+
+[33mcommit a46225ab39bbbf8338688d7a6e37abf611d456c8[m
+Author: Santosh P katageri <santoshpkatageri@users.noreply.github.com>
+Date:   Tue Jun 5 15:17:24 2018 +0530
+
+    Update login.jsp
+
+[33mcommit e505b4843b6db0dd1b232a387817f42ad0ed5544[m
+Author: Santosh P katageri <santoshpkatageri@users.noreply.github.com>
+Date:   Mon Jun 4 11:53:19 2018 +0530
+
+    Update userRegistration.jsp
+
+[33mcommit dcd6875ef4a760dadbbf0083d5a4d873aecdd48c[m
+Author: Santosh P katageri <santoshpkatageri@users.noreply.github.com>
+Date:   Mon Jun 4 11:52:49 2018 +0530
+
+    Update login.jsp
+
+[33mcommit b37813fd4941c0e407d97c43b0dcc2cc750afc66[m
+Author: Santosh P katageri <santoshpkatageri@users.noreply.github.com>
+Date:   Mon Jun 4 11:33:04 2018 +0530
+
+    Update login.jsp
+
+[33mcommit ab2fd57de8c3de728add436ff551a40f34b7cf63[m
+Author: Santosh P katageri <santoshpkatageri@users.noreply.github.com>
+Date:   Mon Jun 4 11:32:44 2018 +0530
+
+    Update userRegistration.jsp
+
+[33mcommit 27559f7d6eec5f2fa9d64c6de3d0878f6679fa51[m
+Author: Akshayalg <akshay.060594@gmail.com>
+Date:   Thu Jan 18 15:02:50 2018 +0530
+
+    Update userRegistration.jsp
+
+[33mcommit 5e1f878eb1041e34f4b629ddc38ccd4e9c7e4b8e[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Thu Jun 8 11:56:06 2017 +0530
+
+    Create login.jsp
+
+[33mcommit 2fabdd737345bf34617c43549ba9352926a7df36[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Thu Jun 8 11:55:47 2017 +0530
+
+    Create userRegistration.jsp
+
+[33mcommit aca89ac1b824cb11f32e3607b84c6b62be59ceeb[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Thu Jun 8 11:30:01 2017 +0530
+
+    Create userRegistration.jsp
+
+[33mcommit 7ed807c665abd34e44647f30f01819c861f7a05d[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Thu Jun 8 11:29:39 2017 +0530
+
+    Create login.jsp
+
+[33mcommit 9169feb323fb943576e700458cb7bae97eea149f[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Tue Jun 6 17:26:44 2017 +0530
+
+    Update userRegistration.jsp
+
+[33mcommit e5881afdc900ee8abe3f8553c827e99aee7e71f0[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Tue Jun 6 17:26:14 2017 +0530
+
+    Update login.jsp
+
+[33mcommit 5ce9e2d487da68dc442c3da496a2d6e3d7edad32[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Mon Jun 5 16:16:44 2017 +0530
+
+    Update userRegistration.jsp
+
+[33mcommit 38a6210150bbf21611bf4d0af65c96a19aae76b3[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Mon Jun 5 16:13:00 2017 +0530
+
+    Update login.jsp
+
+[33mcommit cd8ec73368b56c30e652ba776f4f25c1a5d5b94b[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Mon Jun 5 13:10:06 2017 +0530
+
+    Update userRegistration.jsp
+
+[33mcommit dfa6ae2cb4941c3b6c1f1a31d8c0d8615afc77dd[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Mon Jun 5 13:09:35 2017 +0530
+
+    Update login.jsp
+
+[33mcommit b13c4650ddd10372770092d617180cc8f4a22002[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Mon May 29 17:11:00 2017 +0530
+
+    Update userRegistration.jsp
+
+[33mcommit 136dbe606bba1cea3104c64e80e2234d0d318bb0[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Mon May 29 17:10:06 2017 +0530
+
+    Update login.jsp
+
+[33mcommit c2b92dd3408c628a219de77fe94e853186865aa3[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Wed Apr 19 14:13:51 2017 +0530
+
+    Update login.jsp
+
+[33mcommit 81a671518276d60acb173f8c949bd4c3b86c626d[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Wed Apr 19 14:13:23 2017 +0530
+
+    Update userRegistration.jsp
+
+[33mcommit 6aa3781871cf3728f89e4b18fa6d5be0ffb682bc[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Wed Apr 19 14:12:44 2017 +0530
+
+    Update userRegistration.jsp
+
+[33mcommit ee158aea104b0dbdca7987f8f52d439995b69a15[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Wed Apr 19 14:12:07 2017 +0530
+
+    Update login.jsp
+
+[33mcommit 17da4030afd442e1d5633f23591e801da9dd04f5[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Wed Apr 19 12:05:59 2017 +0530
+
+    Update userRegistration.jsp
+
+[33mcommit 87c1032b0ddf5ba5eabf9181021fa31510367ee2[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Wed Apr 19 12:04:55 2017 +0530
+
+    Update userRegistration.jsp
+
+[33mcommit 751274bed91a660886de619f52a9070ab285c29f[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Wed Apr 19 12:04:14 2017 +0530
+
+    Update login.jsp
+
+[33mcommit 1be5d0d7ab9985a185563787a4992bac23a080ea[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Wed Apr 19 10:18:36 2017 +0530
+
+    Update login.jsp
+
+[33mcommit b7278fb68db74388550ba9f28f3d607eb33394aa[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Tue Apr 18 19:24:45 2017 +0530
+
+    Update login.jsp
+
+[33mcommit a8239d8e5a1be21b6d419e1fb9240cd5d1c3ae88[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Tue Apr 18 19:02:10 2017 +0530
+
+    Update success.jsp
+
+[33mcommit 94ea4b486278bd8009cc457c6e300fdd00c8ec54[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Tue Apr 18 18:59:09 2017 +0530
+
+    Update success.jsp
+
+[33mcommit cbc31f94dec5b7e86612b134467410807fc28066[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Tue Apr 18 18:54:28 2017 +0530
+
+    Update login.jsp
+
+[33mcommit c3478affecf337433eb4e45552fe12f879054c14[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Tue Apr 18 18:44:28 2017 +0530
+
+    Update success.jsp
+
+[33mcommit 86c5e180c882b67656238ec3017b633f1dd10123[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Tue Apr 18 18:41:53 2017 +0530
+
+    Update login.jsp
+
+[33mcommit 894b18f5876ffce6ed209963b0dc2cf91cf6b01b[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Tue Apr 18 18:37:07 2017 +0530
+
+    Update userRegistration.jsp
+
+[33mcommit 8013ea938c6c2c729c4b478f6f57ecb350850b50[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Tue Apr 18 18:36:44 2017 +0530
+
+    Update login.jsp
+
+[33mcommit cab4abd735f3b577e4eaf0d797c24e9088982461[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Tue Apr 18 18:35:28 2017 +0530
+
+    Update login.jsp
+
+[33mcommit bde3e8c7abf35c901137653f34d50d6be6fbfb91[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Tue Apr 18 18:35:05 2017 +0530
+
+    Update userRegistration.jsp
+
+[33mcommit 182128adf7b218c4f5495ce137b3ab4abea1a94a[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Tue Apr 18 17:44:24 2017 +0530
+
+    Update userRegistration.jsp
+
+[33mcommit 032f9ac30c685fce22eb620af4e6dd5cc01c9c8e[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Tue Apr 18 17:43:44 2017 +0530
+
+    Update login.jsp
+
+[33mcommit 464c451be55c10f2877eac15228d73b1fd3290a9[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Tue Apr 18 17:42:29 2017 +0530
+
+    Update login.jsp
+
+[33mcommit d6c6d5c2cf53cf502f7f842fa1228d1e607bd2e7[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Tue Apr 18 17:41:38 2017 +0530
+
+    Update userRegistration.jsp
+
+[33mcommit 6c90822eb26f880ea3531365e2d9f39d3fe3f1eb[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Tue Apr 18 17:40:16 2017 +0530
+
+    Update login.jsp
+
+[33mcommit 16d8c2fe37d896021fe76e1f6d1e00827a677176[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Tue Apr 18 17:17:26 2017 +0530
+
+    Update success.jsp
+
+[33mcommit 973873d004510f08cc00b697c4d03f7e8a60d00e[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Tue Apr 18 17:17:06 2017 +0530
+
+    Update userRegistration.jsp
+
+[33mcommit 62776a528b17178524710a22c7daaf5347aaf5d2[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Tue Apr 18 17:16:30 2017 +0530
+
+    Update login.jsp
+
+[33mcommit 20ddaa0066b5a404144c1e286f84e99c3163c5bf[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Tue Apr 18 17:15:08 2017 +0530
+
+    Update login.jsp
+
+[33mcommit 71a334ecebcf614b2b765e174f3b073308473197[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Tue Apr 18 17:14:44 2017 +0530
+
+    Update userRegistration.jsp
+
+[33mcommit 4633607574fdb35561b0e64f8f5d80208a803c12[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Tue Apr 18 16:46:03 2017 +0530
+
+    Update success.jsp
+
+[33mcommit 94eb82927d01a07e79a18ddd002c0fcac99e2157[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Tue Apr 18 16:45:31 2017 +0530
+
+    Update userRegistration.jsp
+
+[33mcommit 7cfd16caef3d89c9bd8dc661399b0a6a4befc503[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Tue Apr 18 16:44:46 2017 +0530
+
+    Update
+
+[33mcommit d84420adb40d3b800bc1e9b3328707e994c26378[m
+Author: sinnik <sinnik323@gmail.com>
+Date:   Tue Apr 18 16:44:35 2017 +0530
+
+    Update login.jsp
+
+[33mcommit 801eb108a9dc532522b69c744d384e3b80605509[m
+Author: root <root@ip-172-31-11-231.us-west-2.compute.internal>
+Date:   Mon Apr 17 07:38:23 2017 +0000
+
+    first commit

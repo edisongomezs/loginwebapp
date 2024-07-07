@@ -1,22 +1,44 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%> 
-<!DOCTYPE html> 
-<html> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
-<title> Java Simple Login Web App</title> </head> 
+<%@ page import="org.apache.log4j.Logger" %>
+<%@ page import="java.util.Date" %>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%
+    Logger logger = Logger.getLogger("MyAppLogger");
 
+    String ipAddress = request.getRemoteAddr();
+    String username = request.getParameter("username");
+    String password = request.getParameter("password"); // No recomendado por seguridad
+    boolean loginSuccess = false;
 
-<body bgcolor="#aaaaaa"> 
+    if ("admin".equals(username) && "admin".equals(password)) {
+        loginSuccess = true;
+    }
 
-<form method="post" action="login.jsp"> 
-<center> 
-	<table border="0" width="30%" cellpadding="3">
-	<thead> <tr> <th colspan="2">Login Page</th> </tr> </thead> 
-	<tbody> 
-	<tr> <td>Username</td><td><input type="text" name="userName" value="" /></td> </tr> 
-	<tr> <td>Password</td> <td><input type="password" name="password" value="" /></td></tr> 
-	<tr> <td><input type="submit" value="Login" /></td><td><input type="reset" value="Reset" /></td> </tr> 
-	<tr> <td colspan="2">New User <a href="register.jsp">Register Here</a></td> </tr> 
-	</tbody> 
-	</table> 
-</center> 
-</form>
-</body> 
+    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    String currentTime = sdf.format(new Date());
+
+    logger.info("Intento de login - Usuario: " + username + ", IP: " + ipAddress + ", Hora: " + currentTime + ", Resultado: " + (loginSuccess ? "Éxito" : "Fallo"));
+
+    if (loginSuccess) {
+        response.sendRedirect("welcome.jsp");
+    } else {
+        response.sendRedirect("login.jsp?error=true");
+    }
+%>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+</head>
+<body>
+    <form action="index.jsp" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"><br>
+        <input type="submit" value="Login">
+    </form>
+    <% if (request.getParameter("error") != null) { %>
+        <p style="color:red;">Login fallido. Inténtalo de nuevo.</p>
+    <% } %>
+</body>
+</html>
