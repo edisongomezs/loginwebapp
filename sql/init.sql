@@ -8,5 +8,5 @@ CREATE TABLE IF NOT EXISTS USER (
     email VARCHAR(50),
     username VARCHAR(50),
     password VARCHAR(50),
-    regdate DATE
+    regdate DATETIME
 );
