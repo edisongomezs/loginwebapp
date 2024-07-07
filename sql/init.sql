@@ -10,3 +10,4 @@ CREATE TABLE IF NOT EXISTS USER (
     password VARCHAR(50),
     regdate DATETIME
 );
+
