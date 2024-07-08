@@ -1,7 +1,6 @@
 ---
 - hosts: kubernetes
   become: yes
-
   tasks:
     - name: Verificar si el archivo mysql-initdb-config.yml existe en Ansible
       stat:
@@ -41,7 +40,6 @@
 
 - hosts: elastic
   become: yes
-
   tasks:
     - name: Copiar archivo elasticsearch.yml al servidor Elastic
       copy:
@@ -65,20 +63,18 @@
 
 - hosts: ansible
   become: yes
-
   tasks:
-    - name: Ejecutar script de despliegue Docker
-      command: /opt/Docker/deploy_docker.sh
-
-- hosts: jenkins
-  become: yes
-
-  tasks:
-    - name: Copiar script Pingdom Monitor al servidor Jenkins
-      copy:
-        src: /opt/Docker/pingdom_create_monitor.sh
-        dest: /var/lib/jenkins/workspace/Pingdom_Monitor/pingdom_create_monitor.sh
+    - name: Asegurar permisos de ejecución para el script deploy_docker.sh
+      file:
+        path: /opt/Docker/deploy_docker.sh
         mode: '0755'
 
-    - name: Ejecutar script Pingdom Monitor en el servidor Jenkins
-      command: /var/lib/jenkins/workspace/Pingdom_Monitor/pingdom_create_monitor.sh
+    - name: Detener y eliminar contenedor docker_web si existe
+      shell: |
+        docker stop docker_web || true
+        docker rm docker_web || true
+        docker rmi edisongomezs/loginwebapp:latest || true
+
+    - name: Ejecutar script de despliegue Docker
+      command: /opt/Docker/deploy_docker.sh
+      ignore_errors: yes
