@@ -63,6 +63,14 @@
       args:
         chdir: /opt/Docker/webapp_content
 
+    - name: Detener cualquier contenedor que esté usando el puerto 8080
+      shell: |
+        docker ps -q --filter "publish=8080" | xargs -r docker stop
+
+    - name: Eliminar cualquier contenedor que esté usando el puerto 8080
+      shell: |
+        docker ps -aq --filter "publish=8080" | xargs -r docker rm
+
     - name: Build Docker image
       command: docker build -t loginwebapp:latest .
       args:
