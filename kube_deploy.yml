@@ -76,7 +76,7 @@
   tasks:
     - name: Copiar script Pingdom Monitor al servidor Jenkins
       copy:
-        src:  /opt/jenkins/pingdom_create_monitor.sh
+        src: /opt/Docker/pingdom_create_monitor.sh
         dest: /var/lib/jenkins/workspace/Pingdom_Monitor/pingdom_create_monitor.sh
         mode: '0755'
 
