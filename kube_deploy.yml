@@ -69,11 +69,9 @@
         path: /opt/Docker/deploy_docker.sh
         mode: '0755'
 
-    - name: Detener y eliminar contenedor docker_web si existe
+    - name: Detener y eliminar cualquier contenedor que use el puerto 8080
       shell: |
-        docker stop docker_web || true
-        docker rm docker_web || true
-        docker rmi edisongomezs/loginwebapp:latest || true
+        docker ps -q --filter "publish=8080" | grep -q . && docker stop $(docker ps -q --filter "publish=8080") && docker rm $(docker ps -aq --filter "publish=8080") || true
 
     - name: Ejecutar script de despliegue Docker
       command: /opt/Docker/deploy_docker.sh
