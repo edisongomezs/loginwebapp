@@ -67,10 +67,18 @@
   become: yes
 
   tasks:
-    - name: Cambiar permisos del script de despliegue Docker
-      file:
-        path: /opt/Docker/deploy_docker.sh
-        mode: '0755'
-
     - name: Ejecutar script de despliegue Docker
       command: /opt/Docker/deploy_docker.sh
+
+- hosts: jenkins
+  become: yes
+
+  tasks:
+    - name: Copiar script Pingdom Monitor al servidor Jenkins
+      copy:
+        src:  /opt/jenkins/pingdom_create_monitor.sh
+        dest: /var/lib/jenkins/workspace/Pingdom_Monitor/pingdom_create_monitor.sh
+        mode: '0755'
+
+    - name: Ejecutar script Pingdom Monitor en el servidor Jenkins
+      command: /var/lib/jenkins/workspace/Pingdom_Monitor/pingdom_create_monitor.sh
