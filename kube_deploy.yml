@@ -47,20 +47,18 @@
       copy:
         src: /opt/Docker/elasticsearch.yml
         dest: /etc/elasticsearch/elasticsearch.yml
-        remote_src: no
 
     - name: Copiar archivo logstash-mysql.conf al servidor Elastic
       copy:
         src: /opt/Docker/logstash-mysql.conf
         dest: /etc/logstash/conf.d/logstash-mysql.conf
-        remote_src: no
 
-    - name: Reiniciar servicio de Elasticsearch
+    - name: Reiniciar servicio Elasticsearch
       service:
         name: elasticsearch
         state: restarted
 
-    - name: Reiniciar servicio de Logstash
+    - name: Reiniciar servicio Logstash
       service:
         name: logstash
         state: restarted
@@ -69,5 +67,10 @@
   become: yes
 
   tasks:
+    - name: Cambiar permisos del script de despliegue Docker
+      file:
+        path: /opt/Docker/deploy_docker.sh
+        mode: '0755'
+
     - name: Ejecutar script de despliegue Docker
       command: /opt/Docker/deploy_docker.sh
