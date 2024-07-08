@@ -45,12 +45,12 @@
   tasks:
     - name: Copiar archivo elasticsearch.yml al servidor Elastic
       copy:
-        src: /ruta/local/elasticsearch.yml
+        src: /opt/Docker/elasticsearch.yml
         dest: /etc/elasticsearch/elasticsearch.yml
 
     - name: Copiar archivo logstash-mysql.conf al servidor Elastic
       copy:
-        src: /ruta/local/logstash-mysql.conf
+        src: /opt/Docker/logstash-mysql.conf
         dest: /etc/logstash/conf.d/logstash-mysql.conf
 
     - name: Reiniciar servicio Elasticsearch
