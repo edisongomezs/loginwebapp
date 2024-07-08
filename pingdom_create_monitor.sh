@@ -12,18 +12,25 @@ echo "HOST: $HOST"
 echo "CHECK_NAME: $CHECK_NAME"
 echo "INTERVAL: $INTERVAL"
 
-# Crear Monitor en Pingdom
-RESPONSE=$(curl -X POST "https://api.pingdom.com/api/3.1/checks" \
+# Verificar si el monitor ya existe
+EXISTING_CHECK=$(curl -s -X GET "https://api.pingdom.com/api/3.1/checks" \
     -H "Authorization: Bearer $API_KEY" \
-    -H "Content-Type: application/json" \
-    -d '{
-          "name": "'"$CHECK_NAME"'",
-          "host": "'"$HOST"'",
-          "type": "http",
-          "url": "/LoginWebApp/index.jsp",
-          "port": 8080,
-          "resolution": '"$INTERVAL"'
-        }')
+    -H "Content-Type: application/json" | jq -r '.checks[] | select(.name == "'"$CHECK_NAME"'") | .id')
 
-# Mostrar respuesta para depuración
-echo "Response: $RESPONSE"
+if [ -n "$EXISTING_CHECK" ]; then
+    echo "El monitor '$CHECK_NAME' ya existe con ID: $EXISTING_CHECK"
+else
+    # Crear Monitor en Pingdom
+    RESPONSE=$(curl -s -X POST "https://api.pingdom.com/api/3.1/checks" \
+        -H "Authorization: Bearer $API_KEY" \
+        -H "Content-Type: application/json" \
+        -d '{
+              "name": "'"$CHECK_NAME"'",
+              "host": "'"$HOST"'",
+              "type": "http",
+              "url": "/LoginWebApp/index.jsp",
+              "port": 8080,
+              "resolution": '"$INTERVAL"'
+            }')
+    echo "Monitor creado: $RESPONSE"
+fi
