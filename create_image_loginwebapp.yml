@@ -58,6 +58,11 @@
         dest: /opt/Docker/webapp_content/LoginWebApp.war
       delegate_to: jenkins-server
 
+    - name: Extract WAR file
+      command: jar -xvf /opt/Docker/webapp_content/LoginWebApp.war
+      args:
+        chdir: /opt/Docker/webapp_content
+
     - name: Build Docker image
       command: docker build -t loginwebapp:latest .
       args:
