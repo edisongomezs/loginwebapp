@@ -60,20 +60,3 @@
       service:
         name: logstash
         state: restarted
-
-- hosts: ansible
-  become: yes
-  tasks:
-    - name: Asegurar permisos de ejecución para el script deploy_docker.sh
-      file:
-        path: /opt/Docker/deploy_docker.sh
-        mode: '0755'
-
-    - name: Detener y eliminar contenedor docker_web si existe
-      shell: |
-        docker ps -q --filter "name=docker_web" | grep -q . && docker stop docker_web && docker rm docker_web || true
-        docker ps -q --filter "name=docker_web_1" | grep -q . && docker stop docker_web_1 && docker rm docker_web_1 || true
-
-    - name: Ejecutar script de despliegue Docker
-      command: /opt/Docker/deploy_docker.sh
-      ignore_errors: yes

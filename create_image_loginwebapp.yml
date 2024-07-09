@@ -76,8 +76,14 @@
       args:
         chdir: /opt/Docker
 
+    - name: Verify Docker image exists
+      command: docker images edisongomezs/loginwebapp:latest
+      register: docker_image_check
+      failed_when: docker_image_check.stdout.find('edisongomezs/loginwebapp') == -1
+
     - name: Login to Docker Hub
       command: echo "{{ docker_password }}" | docker login -u "{{ docker_username }}" --password-stdin
 
     - name: Push Docker image to Docker Hub
       command: docker push edisongomezs/loginwebapp:latest
+      when: docker_image_check.stdout.find('edisongomezs/loginwebapp') != -1
