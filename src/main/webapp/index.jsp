@@ -92,7 +92,7 @@
         <h1>TFM Automatización del Ciclo de Vida DevOps</h1>
         <div class="project-info">
             <div class="project-title">Proyecto: TFM Automatización del Ciclo de Vida DevOps para una aplicación Web con Jenkins, Maven, Ansible, Kubernetes y Monitoreo Continuo en AWS</div>
-            <div class="team-members">Integrantes: Edison Gomez, Freddy Falcon, Veronica Morales</div>
+            <div class="team-members">Integrantes: Edison Gomez, Freddy Falcon, Veronica Morales v1</div>
         </div>
         <form method="post" action="login.jsp">
             <div class="form-group">

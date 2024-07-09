@@ -6,11 +6,11 @@ DOCKER_USERNAME="edisongomezs"
 DOCKER_PASSWORD="tu_token_de_acceso"
 
 # Detener y eliminar cualquier contenedor existente
-docker ps -q --filter "name=docker_web" | grep -q . && docker stop docker_web && docker rm docker_web || true
-docker ps -q --filter "name=docker_web_1" | grep -q . && docker stop docker_web_1 && docker rm docker_web_1 || true
+docker ps -q | xargs -r docker stop
+docker ps -aq | xargs -r docker rm
 
-# Eliminar imagen anterior si existe
-docker rmi $IMAGE_NAME:$TAG || true
+# Eliminar todas las imágenes
+docker images -q | xargs -r docker rmi -f
 
 # Construir la nueva imagen
 docker build -t $IMAGE_NAME:$TAG .
@@ -23,3 +23,6 @@ docker push $IMAGE_NAME:$TAG
 
 # Ejecutar el nuevo contenedor
 docker run -d --name docker_web -p 8080:8080 $IMAGE_NAME:$TAG
+
+# Eliminar imágenes sin etiquetar
+docker image prune -f

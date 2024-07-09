@@ -40,6 +40,12 @@
     - name: Verify docker-compose installation
       command: /usr/local/bin/docker-compose --version
 
+    - name: Stop and remove all Docker containers
+      shell: docker rm -f $(docker ps -a -q) || true
+
+    - name: Remove all Docker images
+      shell: docker rmi -f $(docker images -q) || true
+
     - name: Copy SQL files from Jenkins to Ansible server
       synchronize:
         src: /var/lib/jenkins/workspace/LoginWebApp_CI_Job/sql/
@@ -62,14 +68,6 @@
       command: jar -xvf /opt/Docker/webapp_content/LoginWebApp.war
       args:
         chdir: /opt/Docker/webapp_content
-
-    - name: Detener cualquier contenedor que esté usando el puerto 8080
-      shell: |
-        docker ps -q --filter "publish=8080" | xargs -r docker stop
-
-    - name: Eliminar cualquier contenedor que esté usando el puerto 8080
-      shell: |
-        docker ps -aq --filter "publish=8080" | xargs -r docker rm
 
     - name: Build Docker image
       command: docker build -t loginwebapp:latest .
