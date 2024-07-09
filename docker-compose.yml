@@ -15,7 +15,6 @@ services:
       - mynet
 
   web:
-    image: edisongomezs/loginwebapp:latest
     build: .
     depends_on:
       - mysql

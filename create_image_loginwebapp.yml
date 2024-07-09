@@ -69,12 +69,13 @@
       args:
         chdir: /opt/Docker/webapp_content
 
-    - name: Build Docker image
-      command: docker build -t edisongomezs/loginwebapp:latest .
+    - name: Build and start Docker Compose services
+      command: docker-compose up -d --build
       args:
         chdir: /opt/Docker
 
-    - name: Start Docker Compose services
-      command: docker-compose up -d
-      args:
-        chdir: /opt/Docker
+    - name: Login to Docker Hub
+      command: echo "{{ docker_password }}" | docker login -u "{{ docker_username }}" --password-stdin
+
+    - name: Push Docker image to Docker Hub
+      command: docker push edisongomezs/loginwebapp:latest
