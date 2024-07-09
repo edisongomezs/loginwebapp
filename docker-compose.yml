@@ -5,8 +5,8 @@ services:
       context: .
       dockerfile: Dockerfile.mysql
     environment:
-      MYSQL_ROOT_PASSWORD: Qwerty@12345
-      MYSQL_DATABASE: sample
+      MYSQL_ROOT_PASSWORD: "{{ mysql_root_password }}"
+      MYSQL_DATABASE: "{{ mysql_database }}"
     ports:
       - "3306:3306"
     volumes:
