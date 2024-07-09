@@ -113,7 +113,7 @@
         .tools img {
             width: 80px;
             margin: 10px;
-            filter: invert(80%);
+            filter: invert(0%);
         }
         .powered-by {
             font-size: 14px;
@@ -122,7 +122,7 @@
             margin: 10px 0;
         }
         .footer {
-            background: #535353;
+            background: #000000;
             width: 100%;
             padding: 0px 0;
             display: flex;
