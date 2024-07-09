@@ -1,3 +1,8 @@
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.DriverManager" %>
+<%@ page import="java.sql.PreparedStatement" %>
+<%@ page import="java.sql.SQLException" %>
+
 <%
     String userName = request.getParameter("userName");
     String password = request.getParameter("password");
@@ -26,6 +31,7 @@
         } else {
             response.sendRedirect("index.jsp");
         }
+        con.close();
     } catch (Exception e) {
         e.printStackTrace(); // Esto ayudará a depurar si hay un error
         response.sendRedirect("index.jsp");
