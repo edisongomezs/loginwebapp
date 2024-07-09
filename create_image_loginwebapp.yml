@@ -70,7 +70,7 @@
         chdir: /opt/Docker/webapp_content
 
     - name: Build Docker image
-      command: docker build -t loginwebapp:latest .
+      command: docker build -t edisongomezs/loginwebapp:latest .
       args:
         chdir: /opt/Docker
 
